@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         //metodo del clic del botón generete
         generete.setOnClickListener{
-            num = Random().nextInt(minValue - maxValue)
+            num = Random().nextInt(maxValue - minValue)
             guessing.setText(num.toString())
             generete.visibility= View.INVISIBLE
             guessed.visibility= View.INVISIBLE
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         up.setOnClickListener{
             minValue= num
             if(checkingLimits()){
-                num = Random().nextInt(minValue - maxValue)
+                num = Random().nextInt(maxValue - minValue)
                 guessing.setText(num.toString())
         }else{
             guessing.setText("No puede ser, ganaste")
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     down.setOnClickListener{
         maxValue= num
         if(checkingLimits()){
-            num = Random().nextInt(minValue-  maxValue)
+            num = Random().nextInt(maxValue - minValue)
             guessing.setText(num.toString())
         }else{
             guessing.setText("No puede ser, ganastes")
